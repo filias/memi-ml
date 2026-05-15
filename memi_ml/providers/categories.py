@@ -25,6 +25,10 @@ from memi_ml.categories.food import (
     ALL as FOOD_LIST,
     WIKIPEDIA as FOOD_WIKI,
 )
+from memi_ml.categories.all_hands import (
+    ALL as ALL_HANDS_LIST,
+    IMAGES as ALL_HANDS_IMAGES,
+)
 
 
 class MunicipalitiesProvider(CategoryProvider):
@@ -87,8 +91,21 @@ class FoodProvider(CategoryProvider):
         return images.get_wikipedia_image(FOOD_WIKI.get(item, item))
 
 
+class AllHandsProvider(CategoryProvider):
+    key = "all hands"
+    items = ALL_HANDS_LIST
+    override_name = True
+
+    def get_image(self, item):
+        path = ALL_HANDS_IMAGES.get(item)
+        if not path:
+            return None
+        return {"name": item, "image": path}
+
+
 register(MunicipalitiesProvider())
 register(ComarquesProvider())
 register(MonumentsProvider())
 register(BeachesProvider())
 register(FoodProvider())
+register(AllHandsProvider())
