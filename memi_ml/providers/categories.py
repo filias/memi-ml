@@ -104,7 +104,7 @@ class AnimalsProvider(CategoryProvider):
 
 
 class FoodProvider(CategoryProvider):
-    key = "food:dishes"
+    key = "culture:food"
     items = FOOD_LIST
     override_name = True
 
