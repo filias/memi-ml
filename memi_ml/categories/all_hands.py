@@ -6,6 +6,7 @@ ALL = [
     "Karaoke",
     "Tiki bar",
     "Jumping platform",
+    "Las Olas restaurant",
 ]
 
 IMAGES = {
@@ -14,4 +15,5 @@ IMAGES = {
     "Karaoke": "/static/all_hands/karaoke.jpg",
     "Tiki bar": "/static/all_hands/tiki-bar.jpg",
     "Jumping platform": "/static/all_hands/jumping-platform.jpg",
+    "Las Olas restaurant": "/static/all_hands/restaurant-las-olas.jpg",
 }
