@@ -1,4 +1,4 @@
-"""Famous Mallorca landscapes — beaches, coves (cales), capes, peaks."""
+"""Famous Mallorca landscapes — beaches, coves (cales), capes, peaks, caves."""
 
 ALL = [
     "Es Trenc",
@@ -16,6 +16,7 @@ ALL = [
     "Puig de Massanella",
     "Puig Tomir",
     "Puig de Galatzó",
+    "Coves del Drac",
 ]
 
 # Display name -> English Wikipedia article title.
@@ -35,6 +36,15 @@ WIKIPEDIA = {
     "Puig de Massanella": "Puig de Massanella",
     "Puig Tomir": "Puig Tomir",
     "Puig de Galatzó": "Galatzó",
+    "Coves del Drac": "Cuevas del Drach",
+}
+
+# Display name -> Wikimedia Commons file, when the Wikipedia article's lead
+# image is a map / town shot instead of the landscape itself. Checked first.
+COMMONS_FILES = {
+    "Cala Millor": "Cala Millor Beach 1.JPG",
+    "Cala d'Or": "Cala d'Or (Cala d'Or) 14.jpg",
+    "Coves del Drac": "Covas del Drac - lit stalagmites and stalagtites 01.jpg",
 }
 
 # Display name -> altitude string (shown as tag on reveal). Peaks only.

@@ -21,6 +21,7 @@ from memi_ml.categories.monuments import (
 from memi_ml.categories.landscapes import (
     ALL as LANDSCAPE_LIST,
     WIKIPEDIA as LANDSCAPE_WIKI,
+    COMMONS_FILES as LANDSCAPE_COMMONS,
     ALTITUDES as LANDSCAPE_ALTITUDES,
 )
 from memi_ml.categories.animals import (
@@ -88,6 +89,12 @@ class LandscapesProvider(CategoryProvider):
     override_name = True
 
     def get_image(self, item):
+        commons = LANDSCAPE_COMMONS.get(item)
+        if commons:
+            result = images.get_commons_file_image(commons)
+            if result:
+                result["name"] = item
+                return result
         return images.get_wikipedia_image(LANDSCAPE_WIKI.get(item, item))
 
     def get_tag(self, item):

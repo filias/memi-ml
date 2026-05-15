@@ -10,7 +10,6 @@ ALL = [
     "Es Baluard",
     "Capocorb Vell",
     "Ses Païsses",
-    "Coves del Drac",
     "Creu de Santa Ponsa",
 ]
 
@@ -25,7 +24,6 @@ WIKIPEDIA = {
     "Es Baluard": "Es Baluard",
     "Capocorb Vell": "Capocorb Vell",
     "Ses Païsses": "Ses Païsses",
-    "Coves del Drac": "Cuevas del Drach",
 }
 
 # Display name -> /static/... path, for items without a usable Wikipedia image.
