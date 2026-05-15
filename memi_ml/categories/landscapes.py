@@ -1,4 +1,4 @@
-"""Famous Mallorca beaches and coves (cales)."""
+"""Famous Mallorca landscapes — beaches, coves (cales), capes."""
 
 ALL = [
     "Es Trenc",
@@ -11,6 +11,7 @@ ALL = [
     "Cala Figuera",
     "Cala Llombards",
     "Port de Sóller",
+    "Cap de Formentor",
 ]
 
 # Display name -> English Wikipedia article title.
@@ -25,4 +26,5 @@ WIKIPEDIA = {
     "Cala Figuera": "Cala Figuera",
     "Cala Llombards": "Cala Llombards",
     "Port de Sóller": "Port de Sóller",
+    "Cap de Formentor": "Cap de Formentor",
 }

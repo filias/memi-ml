@@ -18,9 +18,13 @@ from memi_ml.categories.monuments import (
     WIKIPEDIA as MONUMENT_WIKI,
     STATIC_FILES as MONUMENT_STATIC,
 )
-from memi_ml.categories.beaches import (
-    ALL as BEACH_LIST,
-    WIKIPEDIA as BEACH_WIKI,
+from memi_ml.categories.landscapes import (
+    ALL as LANDSCAPE_LIST,
+    WIKIPEDIA as LANDSCAPE_WIKI,
+)
+from memi_ml.categories.animals import (
+    ALL as ANIMAL_LIST,
+    WIKIPEDIA as ANIMAL_WIKI,
 )
 from memi_ml.categories.food import (
     ALL as FOOD_LIST,
@@ -77,13 +81,22 @@ class MonumentsProvider(CategoryProvider):
         return images.get_wikipedia_image(MONUMENT_WIKI.get(item, item))
 
 
-class BeachesProvider(CategoryProvider):
-    key = "nature:beaches"
-    items = BEACH_LIST
+class LandscapesProvider(CategoryProvider):
+    key = "nature:landscapes"
+    items = LANDSCAPE_LIST
     override_name = True
 
     def get_image(self, item):
-        return images.get_wikipedia_image(BEACH_WIKI.get(item, item))
+        return images.get_wikipedia_image(LANDSCAPE_WIKI.get(item, item))
+
+
+class AnimalsProvider(CategoryProvider):
+    key = "nature:animals"
+    items = ANIMAL_LIST
+    override_name = True
+
+    def get_image(self, item):
+        return images.get_wikipedia_image(ANIMAL_WIKI.get(item, item))
 
 
 class FoodProvider(CategoryProvider):
@@ -110,6 +123,7 @@ class AllHandsProvider(CategoryProvider):
 register(MunicipalitiesProvider())
 register(ComarquesProvider())
 register(MonumentsProvider())
-register(BeachesProvider())
+register(LandscapesProvider())
+register(AnimalsProvider())
 register(FoodProvider())
 register(AllHandsProvider())
