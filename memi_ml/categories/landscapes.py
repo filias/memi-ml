@@ -1,4 +1,4 @@
-"""Famous Mallorca landscapes — beaches, coves (cales), capes."""
+"""Famous Mallorca landscapes — beaches, coves (cales), capes, peaks."""
 
 ALL = [
     "Es Trenc",
@@ -12,6 +12,10 @@ ALL = [
     "Cala Llombards",
     "Port de Sóller",
     "Cap de Formentor",
+    "Puig Major",
+    "Puig de Massanella",
+    "Puig Tomir",
+    "Puig de Galatzó",
 ]
 
 # Display name -> English Wikipedia article title.
@@ -27,4 +31,16 @@ WIKIPEDIA = {
     "Cala Llombards": "Cala Llombards",
     "Port de Sóller": "Port de Sóller",
     "Cap de Formentor": "Cap de Formentor",
+    "Puig Major": "Puig Major",
+    "Puig de Massanella": "Puig de Massanella",
+    "Puig Tomir": "Puig Tomir",
+    "Puig de Galatzó": "Galatzó",
+}
+
+# Display name -> altitude string (shown as tag on reveal). Peaks only.
+ALTITUDES = {
+    "Puig Major": "1,445 m",
+    "Puig de Massanella": "1,367 m",
+    "Puig Tomir": "1,103 m",
+    "Puig de Galatzó": "1,026 m",
 }

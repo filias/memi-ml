@@ -21,6 +21,7 @@ from memi_ml.categories.monuments import (
 from memi_ml.categories.landscapes import (
     ALL as LANDSCAPE_LIST,
     WIKIPEDIA as LANDSCAPE_WIKI,
+    ALTITUDES as LANDSCAPE_ALTITUDES,
 )
 from memi_ml.categories.animals import (
     ALL as ANIMAL_LIST,
@@ -88,6 +89,9 @@ class LandscapesProvider(CategoryProvider):
 
     def get_image(self, item):
         return images.get_wikipedia_image(LANDSCAPE_WIKI.get(item, item))
+
+    def get_tag(self, item):
+        return LANDSCAPE_ALTITUDES.get(item)
 
 
 class AnimalsProvider(CategoryProvider):
