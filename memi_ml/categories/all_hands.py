@@ -1,7 +1,9 @@
 """All hands — specific moments, people, places from work weeks in Mallorca."""
 
-ALL = []
+ALL = [
+    "Iberostar Jardins del Sol Hotel",
+]
 
 IMAGES = {
-    # "Display name": "/static/all_hands/filename.jpg",
+    "Iberostar Jardins del Sol Hotel": "/static/all_hands/hotel.avif",
 }
