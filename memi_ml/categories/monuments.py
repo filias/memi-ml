@@ -30,8 +30,8 @@ WIKIPEDIA = {
     "Coves del Drac": "Cuevas del Drach",
 }
 
-# Display name -> Wikimedia Commons filename, for items without an English
-# Wikipedia article. Checked before WIKIPEDIA.
-COMMONS_FILES = {
-    "Creu de Santa Ponsa": "Calvià. Santa Ponça. Creu del Desembarcament (1).jpg",
+# Display name -> /static/... path, for items without a usable Wikipedia image.
+# Checked before WIKIPEDIA.
+STATIC_FILES = {
+    "Creu de Santa Ponsa": "/static/monuments/creu-santa-ponsa.webp",
 }
