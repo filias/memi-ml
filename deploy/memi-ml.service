@@ -1,0 +1,13 @@
+[Unit]
+Description=Memi Mallorca
+After=network.target
+
+[Service]
+User=memi
+WorkingDirectory=/opt/memi-ml
+ExecStart=/opt/memi-ml/.venv/bin/gunicorn memi_ml.app:app --bind 127.0.0.1:8089 --workers 2
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
