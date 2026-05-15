@@ -28,5 +28,10 @@ WIKIPEDIA = {
     "Capocorb Vell": "Capocorb Vell",
     "Ses Païsses": "Ses Païsses",
     "Coves del Drac": "Cuevas del Drach",
-    "Creu de Santa Ponsa": "Creu de Santa Ponça",
+}
+
+# Display name -> Wikimedia Commons filename, for items without an English
+# Wikipedia article. Checked before WIKIPEDIA.
+COMMONS_FILES = {
+    "Creu de Santa Ponsa": "Calvià. Santa Ponça. Creu del Desembarcament (1).jpg",
 }

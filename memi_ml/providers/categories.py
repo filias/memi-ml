@@ -16,6 +16,7 @@ from memi_ml.categories.comarques import (
 from memi_ml.categories.monuments import (
     ALL as MONUMENT_LIST,
     WIKIPEDIA as MONUMENT_WIKI,
+    COMMONS_FILES as MONUMENT_COMMONS,
 )
 from memi_ml.categories.beaches import (
     ALL as BEACH_LIST,
@@ -70,6 +71,12 @@ class MonumentsProvider(CategoryProvider):
     override_name = True
 
     def get_image(self, item):
+        commons = MONUMENT_COMMONS.get(item)
+        if commons:
+            result = images.get_commons_file_image(commons)
+            if result:
+                result["name"] = item
+                return result
         return images.get_wikipedia_image(MONUMENT_WIKI.get(item, item))
 
 
