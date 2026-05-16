@@ -38,3 +38,22 @@ WIKIPEDIA = {
     "Summer asphodel": "Asphodelus aestivus",
     "Mediterranean smilax": "Smilax aspera",
 }
+
+# Display name -> scientific name (shown as tag on reveal).
+SCIENTIFIC_NAMES = {
+    "Mallorcan peony": "Paeonia cambessedesii",
+    "Balearic boxwood": "Buxus balearica",
+    "Balearic St John's wort": "Hypericum balearicum",
+    "Balearic hellebore": "Helleborus lividus",
+    "Posidonia": "Posidonia oceanica",
+    "Olive tree": "Olea europaea",
+    "Carob tree": "Ceratonia siliqua",
+    "Aleppo pine": "Pinus halepensis",
+    "Holm oak": "Quercus ilex",
+    "Mastic tree": "Pistacia lentiscus",
+    "European fan palm": "Chamaerops humilis",
+    "Rosemary": "Salvia rosmarinus",
+    "Grey-leaved cistus": "Cistus albidus",
+    "Summer asphodel": "Asphodelus aestivus",
+    "Mediterranean smilax": "Smilax aspera",
+}
