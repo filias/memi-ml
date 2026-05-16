@@ -21,8 +21,36 @@ config = MemiConfig(
     ],
     about_html="""
         <p>Memi Mallorca is a memory practice game about Mallorca.</p>
+
+        <h2>How to play</h2>
         <p>Pick a category, look at the image, and try to guess what it is
-        before revealing the answer.</p>
+        before revealing the answer. No accounts, no scores, no time
+        limits.</p>
+        <p>You can play it two ways:</p>
+        <ul>
+            <li><strong>To learn:</strong> when you don't recognise an item,
+            reveal the answer and follow the <em>know more</em> link to read
+            about it. Each exposure strengthens the link between the image
+            and the name.</li>
+            <li><strong>To test yourself:</strong> once a category feels
+            familiar, cycle through it and see how many you can name
+            without revealing.</li>
+        </ul>
+
+        <h2>Why it works</h2>
+        <p>This is a simple form of <em>active recall</em> &mdash; pulling
+        information out of memory instead of re-reading it. The
+        <em>testing effect</em>, well documented in cognitive psychology,
+        shows that retrieval practice builds more durable memory traces
+        than re-exposure alone.</p>
+        <p>Because each prompt is a picture, the game also leverages the
+        <em>picture superiority effect</em>: images are encoded more richly
+        than words and are easier to retrieve later. Naming the item is a
+        form of <em>cued recall</em>, sitting between simple recognition
+        (&ldquo;have I seen this before?&rdquo;) and unaided <em>free
+        recall</em>.</p>
+        <p>Short, frequent sessions outperform long ones &mdash; the
+        <em>spacing effect</em>. A few minutes a day is enough.</p>
     """,
     done_html="""
         <svg width="200" height="180" viewBox="0 0 80 72" xmlns="http://www.w3.org/2000/svg">
