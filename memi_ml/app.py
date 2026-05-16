@@ -26,6 +26,17 @@ config = MemiConfig(
         <p>Pick a category, look at the image, and try to guess what it is
         before revealing the answer. No accounts, no scores, no time
         limits.</p>
+        <p>A few helpers sit in the bottom row:</p>
+        <ul>
+            <li><strong>clues:</strong> toggle progressive letter hints &mdash;
+            reveals the first letter, then the next, and so on. Handy when
+            the name is on the tip of your tongue.</li>
+            <li><strong>report:</strong> flag a card if the image doesn't match
+            the answer (wrong picture, broken thumbnail, etc.).</li>
+            <li><strong>know more:</strong> appears on reveal and opens the
+            Wikipedia article (or source page) for the item, so you can read
+            further.</li>
+        </ul>
         <p>You can play it two ways:</p>
         <ul>
             <li><strong>To learn:</strong> when you don't recognise an item,
