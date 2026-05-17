@@ -3,7 +3,7 @@
 ALL = [
     "Iberostar Jardins del Sol Hotel",
     "Jesse's stairs",
-    "Karaoke",
+    "The karaokeists",
     "Tiki bar",
     "Jumping platform",
     "Las Olas restaurant",
@@ -11,12 +11,13 @@ ALL = [
     "Supertab corner",
     "Supertab tshirt",
     "The bikers",
+    "The padelistas",
 ]
 
 IMAGES = {
     "Iberostar Jardins del Sol Hotel": "/static/all_hands/hotel.avif",
     "Jesse's stairs": "/static/all_hands/stairs.jpeg",
-    "Karaoke": "/static/all_hands/karaoke.jpg",
+    "The karaokeists": "/static/all_hands/the-karaokeists.jpg",
     "Tiki bar": "/static/all_hands/tiki-bar.jpg",
     "Jumping platform": "/static/all_hands/jumping-platform.jpg",
     "Las Olas restaurant": "/static/all_hands/restaurant-las-olas.jpg",
@@ -24,4 +25,5 @@ IMAGES = {
     "Supertab corner": "/static/all_hands/supertab-corner.jpg",
     "Supertab tshirt": "/static/all_hands/supertab-tshirt.jpg",
     "The bikers": "/static/all_hands/the-bikers.jpg",
+    "The padelistas": "/static/all_hands/the-padelistas.jpg",
 }
