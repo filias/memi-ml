@@ -111,6 +111,7 @@ class AnimalsProvider(CategoryProvider):
     key = "nature:animals"
     items = ANIMAL_LIST
     override_name = True
+    tag_style = "scientific"
 
     def get_image(self, item):
         return images.get_wikipedia_image(ANIMAL_WIKI.get(item, item))
@@ -126,6 +127,7 @@ class PlantsProvider(CategoryProvider):
     key = "nature:plants"
     items = PLANT_LIST
     override_name = True
+    tag_style = "scientific"
 
     def get_image(self, item):
         return images.get_wikipedia_image(PLANT_WIKI.get(item, item))
