@@ -1,6 +1,6 @@
-"""53 municipalities of Mallorca, grouped by comarca.
+"""53 municipalities of Mallorca, grouped by region.
 
-Comarca breakdown follows the standard 6-comarca division used on
+Region breakdown follows the standard 6-region division used on
 es.wikipedia.org/wiki/Comarcas_de_Mallorca.
 
 Locator maps come from Wikimedia Commons under the canonical pattern
@@ -9,8 +9,8 @@ elision ``de`` -> ``d'`` before vowels). All 53 files exist and were
 batch-verified via the Commons API.
 """
 
-# Comarca display name -> ordered list of member municipalities.
-COMARQUES = {
+# Region display name -> ordered list of member municipalities.
+REGIONS = {
     "Palma": ["Palma"],
     "Serra de Tramuntana": [
         "Andratx", "Banyalbufar", "Bunyola", "Calvià", "Deià", "Escorca",
@@ -35,19 +35,19 @@ COMARQUES = {
     ],
 }
 
-ALL = [m for munis in COMARQUES.values() for m in munis]
+ALL = [m for munis in REGIONS.values() for m in munis]
 
-# Reverse lookup: municipality -> comarca display name.
-COMARCA_BY_MUNICIPALITY = {m: c for c, munis in COMARQUES.items() for m in munis}
+# Reverse lookup: municipality -> region display name.
+REGION_BY_MUNICIPALITY = {m: c for c, munis in REGIONS.items() for m in munis}
 
 # URL-safe filter keys -> member municipalities (mirrors REGIONS in memi-us states).
 FILTER = {
-    "palma": COMARQUES["Palma"],
-    "tramuntana": COMARQUES["Serra de Tramuntana"],
-    "raiguer": COMARQUES["Raiguer"],
-    "pla": COMARQUES["Pla de Mallorca"],
-    "migjorn": COMARQUES["Migjorn"],
-    "llevant": COMARQUES["Llevant"],
+    "palma": REGIONS["Palma"],
+    "tramuntana": REGIONS["Serra de Tramuntana"],
+    "raiguer": REGIONS["Raiguer"],
+    "pla": REGIONS["Pla de Mallorca"],
+    "migjorn": REGIONS["Migjorn"],
+    "llevant": REGIONS["Llevant"],
 }
 
 

@@ -1,8 +1,8 @@
-"""6 comarques of Mallorca with their Commons locator maps."""
+"""6 regions of Mallorca with their Commons locator maps."""
 
 ALL = ["Palma", "Serra de Tramuntana", "Raiguer", "Pla de Mallorca", "Migjorn", "Llevant"]
 
-# Comarca display name -> Commons filename (no `File:` prefix).
+# Region display name -> Commons filename (no `File:` prefix).
 MAPS = {
     "Palma": "Localització de Palma (comarca).svg",
     "Serra de Tramuntana": "Localització de la Serra de la Tramuntana.svg",

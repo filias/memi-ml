@@ -5,13 +5,13 @@ from memi_engine import images
 
 from memi_ml.categories.municipalities import (
     ALL as MUNICIPALITY_LIST,
-    COMARCA_BY_MUNICIPALITY,
-    FILTER as COMARCA_FILTER,
+    REGION_BY_MUNICIPALITY,
+    FILTER as REGION_FILTER,
     locator_filename,
 )
-from memi_ml.categories.comarques import (
-    ALL as COMARCA_LIST,
-    MAPS as COMARCA_MAPS,
+from memi_ml.categories.regions import (
+    ALL as REGION_LIST,
+    MAPS as REGION_MAPS,
 )
 from memi_ml.categories.monuments import (
     ALL as MONUMENT_LIST,
@@ -48,7 +48,7 @@ class MunicipalitiesProvider(CategoryProvider):
     key = "geography:municipalities"
     items = MUNICIPALITY_LIST
     override_name = True
-    filters = {"comarca": COMARCA_FILTER}
+    filters = {"region": REGION_FILTER}
 
     def get_image(self, item):
         result = images.get_commons_file_image(locator_filename(item))
@@ -58,16 +58,16 @@ class MunicipalitiesProvider(CategoryProvider):
         return None
 
     def get_tag(self, item):
-        return COMARCA_BY_MUNICIPALITY.get(item)
+        return REGION_BY_MUNICIPALITY.get(item)
 
 
-class ComarquesProvider(CategoryProvider):
+class RegionsProvider(CategoryProvider):
     key = "geography:comarques"
-    items = COMARCA_LIST
+    items = REGION_LIST
     override_name = True
 
     def get_image(self, item):
-        filename = COMARCA_MAPS.get(item)
+        filename = REGION_MAPS.get(item)
         if not filename:
             return None
         result = images.get_commons_file_image(filename)
@@ -161,7 +161,7 @@ class AllHandsProvider(CategoryProvider):
 
 
 register(MunicipalitiesProvider())
-register(ComarquesProvider())
+register(RegionsProvider())
 register(MonumentsProvider())
 register(LandscapesProvider())
 register(AnimalsProvider())
