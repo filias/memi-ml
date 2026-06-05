@@ -1,6 +1,6 @@
 """Mallorca category providers."""
 
-from memi_engine import CategoryProvider, register
+from memi_engine import CategoryProvider, ScientificNameProvider, register
 from memi_engine import images
 
 from memi_ml.categories.municipalities import (
@@ -107,36 +107,24 @@ class LandscapesProvider(CategoryProvider):
         return LANDSCAPE_ALTITUDES.get(item)
 
 
-class AnimalsProvider(CategoryProvider):
+class AnimalsProvider(ScientificNameProvider):
     key = "nature:animals"
     items = ANIMAL_LIST
     override_name = True
-    tag_style = "scientific"
+    scientific_names = ANIMAL_SCIENTIFIC
 
     def get_image(self, item):
         return images.get_wikipedia_image(ANIMAL_WIKI.get(item, item))
 
-    def get_tag(self, item):
-        sci = ANIMAL_SCIENTIFIC.get(item, "")
-        if sci and sci.lower() != item.lower():
-            return sci
-        return None
 
-
-class PlantsProvider(CategoryProvider):
+class PlantsProvider(ScientificNameProvider):
     key = "nature:plants"
     items = PLANT_LIST
     override_name = True
-    tag_style = "scientific"
+    scientific_names = PLANT_SCIENTIFIC
 
     def get_image(self, item):
         return images.get_wikipedia_image(PLANT_WIKI.get(item, item))
-
-    def get_tag(self, item):
-        sci = PLANT_SCIENTIFIC.get(item, "")
-        if sci and sci.lower() != item.lower():
-            return sci
-        return None
 
 
 class FoodProvider(CategoryProvider):
