@@ -12,17 +12,17 @@ config = MemiConfig(
         '<script data-goatcounter="https://memi-ml.goatcounter.com/count"'
         ' async src="//gc.zgo.at/count.js"></script>'
     ),
-    title="memi Mallorca",
+    title="memi mallorca",
     subtitle="practise your memory",
     favicon_color="#DA121A",
     sponsor_url="https://github.com/sponsors/filias",
     sponsor_text="sponsor",
     related_sites=[
-        {"name": "memi", "url": "https://memi.click"},
-        {"name": "memi portugal", "url": "https://pt.memi.click"},
-        {"name": "memi lisboa", "url": "https://lx.memi.click"},
-        {"name": "memi slovensko", "url": "https://sk.memi.click"},
-        {"name": "memi US", "url": "https://us.memi.click"},
+        {"name": "memi", "url": "https://world.memi.games"},
+        {"name": "memi portugal", "url": "https://pt.memi.games"},
+        {"name": "memi lisboa", "url": "https://lx.memi.games"},
+        {"name": "memi slovensko", "url": "https://sk.memi.games"},
+        {"name": "memi united states", "url": "https://us.memi.games"},
     ],
     about_html="""
         <p>Memi Mallorca is a memory practice game about Mallorca.</p>

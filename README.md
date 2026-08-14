@@ -1,4 +1,4 @@
-# memi Mallorca
+# memi mallorca
 
 A Mallorca memory card game built on [memi-engine](https://github.com/filias/memi-engine).
 
