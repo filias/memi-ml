@@ -7,11 +7,13 @@ from memi_ml.categories.municipalities import (
     ALL as MUNICIPALITY_LIST,
     REGION_BY_MUNICIPALITY,
     FILTER as REGION_FILTER,
+    WIKIPEDIA as MUNICIPALITY_WIKI,
     locator_filename,
 )
 from memi_ml.categories.regions import (
     ALL as REGION_LIST,
     MAPS as REGION_MAPS,
+    WIKIPEDIA as REGION_WIKI,
 )
 from memi_ml.categories.monuments import (
     ALL as MONUMENT_LIST,
@@ -44,10 +46,17 @@ from memi_ml.categories.all_hands import (
 )
 
 
+# Mallorca. Wikidata coordinates outside it belong to something other than
+# the place on the card, so they get no map.
+MALLORCA_BOUNDS = ((39.2, 40.0), (2.3, 3.5))
+
+
 class MunicipalitiesProvider(CategoryProvider):
     key = "geography:municipalities"
     items = MUNICIPALITY_LIST
     override_name = True
+    map_zoom = 12
+    map_bounds = MALLORCA_BOUNDS
     filters = {"region": REGION_FILTER}
 
     def get_image(self, item):
@@ -60,11 +69,17 @@ class MunicipalitiesProvider(CategoryProvider):
     def get_tag(self, item):
         return REGION_BY_MUNICIPALITY.get(item)
 
+    def get_wikipedia_title(self, item):
+        # The card is a Commons locator map, not an article.
+        return ("en", MUNICIPALITY_WIKI.get(item, item))
+
 
 class RegionsProvider(CategoryProvider):
     key = "geography:comarques"
     items = REGION_LIST
     override_name = True
+    map_zoom = 10
+    map_bounds = MALLORCA_BOUNDS
 
     def get_image(self, item):
         filename = REGION_MAPS.get(item)
@@ -76,11 +91,17 @@ class RegionsProvider(CategoryProvider):
             return result
         return None
 
+    def get_wikipedia_title(self, item):
+        # The card is a Commons locator map, not an article.
+        return ("en", REGION_WIKI.get(item, item))
+
 
 class MonumentsProvider(CategoryProvider):
     key = "culture:monuments"
     items = MONUMENT_LIST
     override_name = True
+    map_zoom = 16
+    map_bounds = MALLORCA_BOUNDS
 
     def get_image(self, item):
         static = MONUMENT_STATIC.get(item)
@@ -88,11 +109,17 @@ class MonumentsProvider(CategoryProvider):
             return {"name": item, "image": static}
         return images.get_wikipedia_image(MONUMENT_WIKI.get(item, item))
 
+    def get_wikipedia_title(self, item):
+        # Some cards are local or Commons photos without an article link.
+        return ("en", MONUMENT_WIKI.get(item, item))
+
 
 class LandscapesProvider(CategoryProvider):
     key = "nature:landscapes"
     items = LANDSCAPE_LIST
     override_name = True
+    map_zoom = 13
+    map_bounds = MALLORCA_BOUNDS
 
     def get_image(self, item):
         commons = LANDSCAPE_COMMONS.get(item)
@@ -105,6 +132,10 @@ class LandscapesProvider(CategoryProvider):
 
     def get_tag(self, item):
         return LANDSCAPE_ALTITUDES.get(item)
+
+    def get_wikipedia_title(self, item):
+        # Some cards are Commons photos without an article link.
+        return ("en", LANDSCAPE_WIKI.get(item, item))
 
 
 class AnimalsProvider(ScientificNameProvider):

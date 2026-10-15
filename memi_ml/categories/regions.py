@@ -11,3 +11,13 @@ MAPS = {
     "Migjorn": "Localització del Migjorn.svg",
     "Llevant": "Localització del Llevant.svg",
 }
+
+# English Wikipedia article for each comarca (the details panel).
+WIKIPEDIA = {
+    "Palma": "Palma de Mallorca",
+    "Serra de Tramuntana": "Serra de Tramuntana",
+    "Raiguer": "Raiguer",
+    "Pla de Mallorca": "Pla de Mallorca",
+    "Migjorn": "Migjorn",
+    "Llevant": "Llevant",
+}
