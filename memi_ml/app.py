@@ -6,15 +6,35 @@ from memi_engine import MemiConfig, create_app
 
 import memi_ml.providers  # noqa: F401
 
+# The home page opens on the menu, and its empty card shows Mallorca's coastline in the island's flag above
+# "pick a category". The engine has no setting for that, so this rides on
+# analytics_html (raw HTML at the bottom of every page, after app.js); loading
+# a category replaces the card's text, so the map goes with it.
+# static/flag-map-mallorca.svg: the coastline from OpenStreetMap (ODbL), the flag from Wikimedia Commons (public domain).
+HOME_CARD_HTML = """
+<style>
+    #status.home { width: 100%; text-align: center; }
+    #status .home-map { display: block; max-width: 80%; max-height: calc(min(500px, 90vw) * 0.6); margin: 0 auto 1.5rem; }
+</style>
+<script>
+(function () {
+    var status = document.getElementById('status');
+    if (status && status.textContent.trim() === 'pick a category') {
+        status.classList.add('home');
+        status.insertAdjacentHTML('afterbegin', '<img class="home-map" src="/static/flag-map-mallorca.svg" alt="Mallorca">');
+    }
+})();
+</script>
+"""
+
 config = MemiConfig(
-    default_category="culture:monuments",
     # Details panel beside the card on reveal: the Wikipedia intro and, for
     # places, a map.
     layout="enriched",
     analytics_html=(
         '<script data-goatcounter="https://memi-ml.goatcounter.com/count"'
         ' async src="//gc.zgo.at/count.js"></script>'
-    ),
+    ) + HOME_CARD_HTML,
     title="memi mallorca",
     subtitle="practise your memory",
     favicon_color="#DA121A",
